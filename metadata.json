@@ -1,0 +1,6 @@
+{
+  "name": "Promotion Delivery — Продвижение на Яндекс.Еде",
+  "description": "Продвижение ресторанов и кафе на Яндекс.Еде под ключ. Увеличение заказов, выручки и рейтинга.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
