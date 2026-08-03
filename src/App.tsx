@@ -13,6 +13,7 @@ import { FinalCta } from './components/FinalCta';
 import { Footer } from './components/Footer';
 import { ConsultationModal } from './components/ConsultationModal';
 import { VideoModal } from './components/VideoModal';
+import { CookieBanner } from './components/CookieBanner';
 
 export default function App() {
   const [consultationOpen, setConsultationOpen] = useState(false);
@@ -106,6 +107,9 @@ export default function App() {
         title={videoModalData.title}
         videoUrl={videoModalData.url}
       />
+
+      {/* Cookie Consent Banner */}
+      <CookieBanner />
     </div>
   );
 }
