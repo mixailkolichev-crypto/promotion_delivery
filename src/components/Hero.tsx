@@ -33,7 +33,7 @@ export function Hero({ onOpenConsultation }: HeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Text & CTA Content */}
-          <div className="lg:col-span-7 space-y-6 md:space-y-8 text-left">
+          <div className="lg:col-span-6 space-y-6 md:space-y-8 text-left">
             
             {/* Tag Badge */}
             <motion.div
@@ -141,22 +141,22 @@ export function Hero({ onOpenConsultation }: HeroProps) {
           </div>
 
           {/* Right Column: Hero Visual (Dishes, Floating Stat Cards & Yandex Elements) */}
-          <div className="lg:col-span-5 relative flex justify-center items-center">
+          <div className="lg:col-span-6 relative flex justify-center lg:justify-end items-center">
             
             {/* Main Video Wrapper */}
-            <div className="relative w-full max-w-md aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-2xl lg:max-w-4xl scale-105 sm:scale-115 lg:scale-125 lg:translate-x-10 flex items-center justify-center">
               
               {/* Inner Soft Glow */}
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-[#FFCC00]/15 to-amber-100/30 blur-2xl -z-10" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#FFCC00]/15 to-amber-100/30 blur-2xl -z-10" />
 
-              {/* Main Dish / Video Container blending with background */}
-              <div className="relative w-full h-full rounded-3xl overflow-hidden group mix-blend-multiply">
+              {/* Full Video without frame borders or clipping */}
+              <div className="relative w-full group">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 pointer-events-auto mix-blend-multiply"
+                  className="w-full h-auto object-contain pointer-events-auto"
                 >
                   <source src="https://www.image2url.com/r2/default/videos/1785699802300-47ff45e4-bc2a-485b-b260-8732ed1c6dd1.mp4" type="video/mp4" />
                 </video>

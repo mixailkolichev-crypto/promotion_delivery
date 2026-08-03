@@ -22,7 +22,7 @@ export function Footer() {
             </p>
             <div className="flex items-center space-x-3 pt-2">
               <a
-                href="https://wa.me/79990000000"
+                href="https://wa.me/79161482007"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center space-x-1.5 rounded-full bg-zinc-900 px-3 py-1.5 text-xs font-bold text-[#25D366] border border-zinc-800 hover:border-[#25D366] transition-colors"
@@ -77,11 +77,11 @@ export function Footer() {
             <ul className="space-y-2.5 text-xs">
               <li className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 text-[#FFCC00]" />
-                <a href="tel:+78005553535" className="hover:text-white transition-colors">+7 (800) 555-35-35</a>
+                <a href="tel:+79161482007" className="hover:text-white transition-colors">+7 (916) 148-20-07</a>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-[#FFCC00]" />
-                <a href="mailto:hello@promotion-delivery.ru" className="hover:text-white transition-colors">hello@promotion-delivery.ru</a>
+                <a href="mailto:makhareakhalaia@gmail.com" className="hover:text-white transition-colors">makhareakhalaia@gmail.com</a>
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-[#FFCC00]" />

@@ -43,7 +43,7 @@ export function ConsultationModal({ isOpen, onClose, defaultRestaurantName = '' 
 
     setTimeout(() => {
       if (preferredChannel === 'whatsapp') {
-        window.open(`https://wa.me/79990000000?text=${encodedText}`, '_blank');
+        window.open(`https://wa.me/79161482007?text=${encodedText}`, '_blank');
       } else {
         window.open(`https://max.ru/promotion_delivery?text=${encodedText}`, '_blank');
       }
@@ -52,7 +52,7 @@ export function ConsultationModal({ isOpen, onClose, defaultRestaurantName = '' 
 
   const handleDirectWhatsApp = () => {
     const text = encodeURIComponent('Здравствуйте! Хочу получить бесплатную консультацию по продвижению ресторана на Яндекс.Еде.');
-    window.open(`https://wa.me/79990000000?text=${text}`, '_blank');
+    window.open(`https://wa.me/79161482007?text=${text}`, '_blank');
   };
 
   const handleDirectMax = () => {
@@ -190,7 +190,7 @@ export function ConsultationModal({ isOpen, onClose, defaultRestaurantName = '' 
                     <input
                       type="text"
                       required
-                      placeholder="+7 (999) 000-00-00 или @username"
+                      placeholder="+7 (916) 148-20-07 или @username"
                       value={contact}
                       onChange={(e) => setContact(e.target.value)}
                       className="w-full rounded-xl border border-zinc-200 bg-zinc-50/50 py-2.5 pl-10 pr-4 text-sm text-zinc-900 placeholder:text-zinc-400 focus:border-[#FFCC00] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#FFCC00]/30 transition-all"

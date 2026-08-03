@@ -17,7 +17,7 @@ export function FinalCta({ onOpenConsultation }: FinalCtaProps) {
       `📌 Название: ${restaurant || 'Уточню в диалоге'}\n` +
       `📞 Телефон: ${phone || 'Указан в WhatsApp'}`
     );
-    window.open(`https://wa.me/79990000000?text=${text}`, '_blank');
+    window.open(`https://wa.me/79161482007?text=${text}`, '_blank');
   };
 
   return (
@@ -50,7 +50,7 @@ export function FinalCta({ onOpenConsultation }: FinalCtaProps) {
               {/* Direct Messenger Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <a
-                  href="https://wa.me/79990000000?text=Здравствуйте!%20Хочу%20получить%20бесплатную%20консультацию."
+                  href="https://wa.me/79161482007?text=Здравствуйте!%20Хочу%20получить%20бесплатную%20консультацию."
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center space-x-2.5 rounded-2xl bg-[#25D366] px-6 py-4 font-bold text-white shadow-lg shadow-[#25D366]/25 hover:bg-[#20bd5a] transition-all transform active:scale-95"
@@ -107,7 +107,7 @@ export function FinalCta({ onOpenConsultation }: FinalCtaProps) {
                   <input
                     type="tel"
                     required
-                    placeholder="+7 (999) 000-00-00"
+                    placeholder="+7 (916) 148-20-07"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     className="w-full rounded-xl border border-zinc-700 bg-zinc-950 py-3 px-4 text-sm text-white placeholder:text-zinc-500 focus:border-[#FFCC00] focus:outline-none focus:ring-1 focus:ring-[#FFCC00]"

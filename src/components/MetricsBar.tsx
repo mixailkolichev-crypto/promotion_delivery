@@ -23,7 +23,7 @@ export function MetricsBar() {
     },
     {
       icon: TrendingUp,
-      value: 'от 30 000 ₽',
+      value: 'от 300 000 ₽',
       title: 'прирост прибыли',
       subtitle: 'увеличиваем ежемесячный доход рестораторов',
     },

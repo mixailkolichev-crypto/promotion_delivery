@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ShoppingBag, Star, Megaphone, BarChart, ArrowUpRight, Check, Play } from 'lucide-react';
+import { ShoppingBag, Star, Megaphone, BarChart, ArrowUpRight, Check } from 'lucide-react';
 
 interface ServicesProps {
   onOpenConsultation: () => void;
@@ -11,7 +11,7 @@ export function Services({ onOpenConsultation, onOpenVideo }: ServicesProps) {
   const [activeService, setActiveService] = useState<number>(0);
 
   const magnificVideoUrl =
-    'https://www.magnific.com/ru/premium-video/hand-drawn-graph-infographics-chart-pink_4241140#fromView=search&page=1&position=45&uuid=aa13a6ac-0e6d-4743-b868-011016313f3e';
+    'https://www.image2url.com/r2/default/videos/1785779239844-74160e09-a735-4030-906d-96d0e464bdfa.mp4';
 
   const services = [
     {
@@ -143,50 +143,31 @@ export function Services({ onOpenConsultation, onOpenVideo }: ServicesProps) {
             </div>
           </div>
 
-          {/* Right Column Visual: Infographics Video Container */}
-          <div className="lg:col-span-6 relative flex justify-center">
-            
-            <div className="relative w-full max-w-lg aspect-square rounded-[3rem] bg-gradient-to-tr from-zinc-100 to-amber-50/40 p-6 sm:p-8 border border-zinc-200/80 shadow-2xl flex items-center justify-center overflow-hidden group">
-              
-              {/* Background Circular Plate Glow */}
-              <div className="absolute inset-8 rounded-full bg-gradient-to-b from-[#FFCC00]/15 to-transparent blur-2xl" />
-
-              {/* Main Video Container */}
+          {/* Right Column Visual: Full Infographics Video without frames */}
+          <div className="lg:col-span-6 relative flex items-center justify-center lg:justify-end">
+            <div className="relative w-full max-w-2xl lg:max-w-4xl scale-105 sm:scale-115 lg:scale-125 lg:translate-x-8 group">
+              {/* Full Video without frame borders or padding */}
               <div
                 onClick={() => onOpenVideo?.(magnificVideoUrl, "Анимированная инфографика графиков и результатов")}
-                className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-zinc-950 group cursor-pointer"
+                className="relative w-full cursor-pointer"
               >
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 pointer-events-auto"
+                  className="w-full h-auto object-contain pointer-events-auto"
                 >
-                  <source src="https://www.image2url.com/r2/default/videos/1785699802300-47ff45e4-bc2a-485b-b260-8732ed1c6dd1.mp4" type="video/mp4" />
+                  <source src="https://www.image2url.com/r2/default/videos/1785779239844-74160e09-a735-4030-906d-96d0e464bdfa.mp4" type="video/mp4" />
                 </video>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-4 sm:p-5 pointer-events-none">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#FFCC00] text-black shadow-lg shadow-[#FFCC00]/50 group-hover:scale-110 transition-transform">
-                        <Play className="h-4 w-4 fill-black ml-0.5" />
-                      </div>
-                      <span className="text-xs font-bold text-white bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
-                        Инфографика 📊
-                      </span>
-                    </div>
-                  </div>
-                </div>
               </div>
 
-              {/* Floating Badge (Рост заказов и прибыли) matching reference image */}
+              {/* Floating Badge (Рост заказов и прибыли) */}
               <motion.div
                 onClick={onOpenConsultation}
                 animate={{ scale: [1, 1.03, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute bottom-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 sm:p-4 shadow-xl border border-zinc-200 cursor-pointer flex items-center space-x-3 hover:bg-white transition-colors z-10"
+                className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 sm:p-4 shadow-xl border border-zinc-200 cursor-pointer flex items-center space-x-3 hover:bg-white transition-colors z-10"
               >
                 <div>
                   <span className="text-xs font-black text-zinc-900 block">Рост заказов и прибыли</span>
@@ -196,9 +177,7 @@ export function Services({ onOpenConsultation, onOpenVideo }: ServicesProps) {
                   <ArrowUpRight className="h-5 w-5 stroke-[2.5]" />
                 </div>
               </motion.div>
-
             </div>
-
           </div>
 
         </div>

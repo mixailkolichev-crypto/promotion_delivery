@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MessageSquare, Menu, X, ArrowUpRight, Phone, Send } from 'lucide-react';
+import { MessageSquare, Menu, X, ArrowUpRight, Send } from 'lucide-react';
+import { FloatingDock, DockItem } from './ui/floating-dock';
+import {
+  IconTools,
+  IconChartBar,
+  IconInfoCircle,
+  IconMessage2,
+  IconPhone,
+  IconBrandWhatsapp,
+  IconMessageCode,
+} from '@tabler/icons-react';
 
 interface HeaderProps {
   onOpenConsultation: () => void;
@@ -26,12 +36,38 @@ export function Header({ onOpenConsultation }: HeaderProps) {
     { name: 'Контакты', href: '#contacts' },
   ];
 
+  const dockItems: DockItem[] = [
+    {
+      title: 'Услуги',
+      icon: <IconTools className="h-4 w-4 text-zinc-700" />,
+      href: '#services',
+    },
+    {
+      title: 'Кейсы',
+      icon: <IconChartBar className="h-4 w-4 text-zinc-700" />,
+      href: '#cases',
+    },
+    {
+      title: 'О нас',
+      icon: <IconInfoCircle className="h-4 w-4 text-zinc-700" />,
+      href: '#about',
+    },
+    {
+      title: 'Отзывы',
+      icon: <IconMessage2 className="h-4 w-4 text-zinc-700" />,
+      href: '#reviews',
+    },
+    {
+      title: 'Контакты',
+      icon: <IconPhone className="h-4 w-4 text-zinc-700" />,
+      href: '#contacts',
+    },
+  ];
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/85 backdrop-blur-md border-b border-zinc-200/60 py-3 shadow-sm'
-          : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-transparent ${
+        isScrolled ? 'py-2.5' : 'py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,26 +90,18 @@ export function Header({ onOpenConsultation }: HeaderProps) {
             </div>
           </a>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-zinc-600 hover:text-zinc-950 transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
+          {/* Floating Dock Navigation (Desktop) */}
+          <div className="hidden md:flex items-center">
+            <FloatingDock items={dockItems} />
+          </div>
 
           {/* CTA & Messenger Quick Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
             <a
-              href="https://wa.me/79990000000"
+              href="https://wa.me/79161482007"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center space-x-1 text-xs font-semibold text-zinc-600 hover:text-[#25D366] transition-colors p-2"
+              className="flex items-center space-x-1.5 text-xs font-semibold text-zinc-700 hover:text-[#25D366] transition-colors p-2 rounded-full hover:bg-zinc-100/80"
               title="Написать в WhatsApp"
             >
               <MessageSquare className="h-4 w-4 text-[#25D366]" />
@@ -83,7 +111,7 @@ export function Header({ onOpenConsultation }: HeaderProps) {
             <button
               onClick={onOpenConsultation}
               data-cursor="Консультация"
-              className="relative group overflow-hidden rounded-full bg-[#09090B] px-5 py-2.5 text-xs font-bold text-white transition-all shadow-md hover:shadow-lg hover:shadow-black/20 transform active:scale-95"
+              className="relative group overflow-hidden rounded-full bg-[#09090B] px-5 py-2.5 text-xs font-bold text-white transition-all shadow-md hover:shadow-lg hover:shadow-black/20 transform active:scale-95 cursor-pointer"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#FFCC00] via-[#FFD600] to-[#FFCC00] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0" />
               <span className="relative z-10 flex items-center space-x-1.5 group-hover:text-zinc-950 transition-colors">
@@ -93,11 +121,11 @@ export function Header({ onOpenConsultation }: HeaderProps) {
             </button>
           </div>
 
-          {/* Mobile Menu Trigger */}
+          {/* Mobile Floating Dock & Menu Trigger */}
           <div className="flex md:hidden items-center space-x-2">
             <button
               onClick={onOpenConsultation}
-              className="rounded-full bg-[#09090B] px-3.5 py-1.5 text-xs font-bold text-[#FFCC00]"
+              className="rounded-full bg-[#09090B] px-3.5 py-1.5 text-xs font-bold text-[#FFCC00] shadow-sm"
             >
               Консультация
             </button>
@@ -134,7 +162,7 @@ export function Header({ onOpenConsultation }: HeaderProps) {
 
               <div className="pt-2 grid grid-cols-2 gap-2">
                 <a
-                  href="https://wa.me/79990000000"
+                  href="https://wa.me/79161482007"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center space-x-2 rounded-xl bg-[#25D366] py-2.5 text-xs font-bold text-white shadow-sm"
@@ -170,3 +198,4 @@ export function Header({ onOpenConsultation }: HeaderProps) {
     </header>
   );
 }
+
